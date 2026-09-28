@@ -1,0 +1,77 @@
+name: Build and release
+
+on:
+  pull_request:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: read
+
+jobs:
+  android:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: "17"
+          cache: gradle
+      - name: Build Android app
+        working-directory: Android
+        run: ./gradlew --no-daemon :app:assembleDebug :app:lintDebug
+      - name: Prepare Android package
+        run: cp Android/app/build/outputs/apk/debug/app-debug.apk Frameboard-Android.apk
+      - uses: actions/upload-artifact@v7
+        with:
+          name: Frameboard-Android
+          path: Frameboard-Android.apk
+          if-no-files-found: error
+
+  macos:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Build macOS app
+        run: >-
+          xcodebuild -quiet
+          -project macOS/Frameboard.xcodeproj
+          -scheme Frameboard
+          -configuration Release
+          -destination 'generic/platform=macOS'
+          -derivedDataPath build/macOS-release
+          CODE_SIGN_IDENTITY=-
+          CODE_SIGN_ENTITLEMENTS="$GITHUB_WORKSPACE/macOS/Frameboard/App/Preview.entitlements"
+          CODE_SIGNING_REQUIRED=NO
+          build
+      - name: Prepare macOS package
+        run: ditto -c -k --sequesterRsrc --keepParent build/macOS-release/Build/Products/Release/Frameboard.app Frameboard-macOS.zip
+      - uses: actions/upload-artifact@v7
+        with:
+          name: Frameboard-macOS
+          path: Frameboard-macOS.zip
+          if-no-files-found: error
+
+  release:
+    if: startsWith(github.ref, 'refs/tags/v')
+    needs: [android, macos]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v8
+        with:
+          pattern: Frameboard-*
+          path: release-assets
+          merge-multiple: true
+      - name: Publish GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if gh release view "$GITHUB_REF_NAME" >/dev/null 2>&1; then
+            gh release upload "$GITHUB_REF_NAME" release-assets/* --clobber
+          else
+            gh release create "$GITHUB_REF_NAME" release-assets/* --verify-tag --generate-notes --title "$GITHUB_REF_NAME"
+          fi
