@@ -1,0 +1,55 @@
+// !$*UTF8*$!
+{
+ archiveVersion = 1;
+ classes = {};
+ objectVersion = 56;
+ objects = {
+  B00000000000000000000002 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OBSController.swift; sourceTree = "<group>";};
+  B00000000000000000000012 = {isa = PBXBuildFile; fileRef = B00000000000000000000002;};
+  B00000000000000000000001 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OBSClient.swift; sourceTree = "<group>";};
+  B00000000000000000000011 = {isa = PBXBuildFile; fileRef = B00000000000000000000001;};
+  B00000000000000000000000 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFrameServer.swift; sourceTree = "<group>";};
+  B00000000000000000000010 = {isa = PBXBuildFile; fileRef = B00000000000000000000000;};
+  B00000000000000000000003 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureChannel.swift; sourceTree = "<group>";};
+  B00000000000000000000013 = {isa = PBXBuildFile; fileRef = B00000000000000000000003;};
+  B00000000000000000000004 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairingIdentity.swift; sourceTree = "<group>";};
+  B00000000000000000000014 = {isa = PBXBuildFile; fileRef = B00000000000000000000004;};
+  A00000000000000000000001 = {isa = PBXProject; attributes = { LastUpgradeCheck = 1600; TargetAttributes = { A00000000000000000000010 = {CreatedOnToolsVersion = 16.0;}; A00000000000000000000011 = {CreatedOnToolsVersion = 16.0;}; }; }; buildConfigurationList = A00000000000000000000031; compatibilityVersion = "Xcode 14.0"; developmentRegion = en; hasScannedForEncodings = 0; knownRegions = (en, Base); mainGroup = A00000000000000000000002; productRefGroup = A00000000000000000000003; projectDirPath = ""; projectRoot = ""; targets = (A00000000000000000000010,A00000000000000000000011); };
+  A00000000000000000000002 = {isa = PBXGroup; children = (A00000000000000000000004,A00000000000000000000005,A00000000000000000000003); sourceTree = "<group>";};
+  A00000000000000000000003 = {isa = PBXGroup; children = (A00000000000000000000020,A00000000000000000000021); name = Products; sourceTree = "<group>";};
+  A00000000000000000000004 = {isa = PBXGroup; children = (A00000000000000000000040,A00000000000000000000041,A00000000000000000000042,A00000000000000000000043,B00000000000000000000000,B00000000000000000000001,B00000000000000000000002,B00000000000000000000003,B00000000000000000000004); name = App; path = Frameboard/App; sourceTree = "<group>";};
+  A00000000000000000000005 = {isa = PBXGroup; children = (A00000000000000000000044,A00000000000000000000045,A00000000000000000000046,A00000000000000000000047); name = Extension; path = Frameboard/Extension; sourceTree = "<group>";};
+  A00000000000000000000010 = {isa = PBXNativeTarget; buildConfigurationList = A00000000000000000000032; buildPhases = (A00000000000000000000050,A00000000000000000000052); buildRules = (); dependencies = (A00000000000000000000070); name = Frameboard; productName = Frameboard; productReference = A00000000000000000000020; productType = "com.apple.product-type.application";};
+  A00000000000000000000011 = {isa = PBXNativeTarget; buildConfigurationList = A00000000000000000000033; buildPhases = (A00000000000000000000051); buildRules = (); dependencies = (); name = FrameboardCameraExtension; productName = FrameboardCameraExtension; productReference = A00000000000000000000021; productType = "com.apple.product-type.system-extension";};
+  A00000000000000000000020 = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Frameboard.app; sourceTree = BUILT_PRODUCTS_DIR;};
+  A00000000000000000000021 = {isa = PBXFileReference; explicitFileType = "wrapper.system-extension"; includeInIndex = 0; path = FrameboardCameraExtension.systemextension; sourceTree = BUILT_PRODUCTS_DIR;};
+  A00000000000000000000040 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameboardApp.swift; sourceTree = "<group>";};
+  A00000000000000000000041 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraModel.swift; sourceTree = "<group>";};
+  A00000000000000000000042 = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>";};
+  A00000000000000000000043 = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Frameboard.entitlements; sourceTree = "<group>";};
+  A00000000000000000000044 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>";};
+  A00000000000000000000045 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameboardProvider.swift; sourceTree = "<group>";};
+  A00000000000000000000046 = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>";};
+  A00000000000000000000047 = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Frameboard.entitlements; sourceTree = "<group>";};
+  A00000000000000000000060 = {isa = PBXBuildFile; fileRef = A00000000000000000000040;};
+  A00000000000000000000061 = {isa = PBXBuildFile; fileRef = A00000000000000000000041;};
+  A00000000000000000000062 = {isa = PBXBuildFile; fileRef = A00000000000000000000044;};
+  A00000000000000000000063 = {isa = PBXBuildFile; fileRef = A00000000000000000000045;};
+  A00000000000000000000064 = {isa = PBXBuildFile; fileRef = A00000000000000000000021; settings = {ATTRIBUTES = (CodeSignOnCopy,);};};
+  A00000000000000000000050 = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (A00000000000000000000060,A00000000000000000000061,B00000000000000000000010,B00000000000000000000011,B00000000000000000000012,B00000000000000000000013,B00000000000000000000014); runOnlyForDeploymentPostprocessing = 0;};
+  A00000000000000000000051 = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (A00000000000000000000062,A00000000000000000000063); runOnlyForDeploymentPostprocessing = 0;};
+  A00000000000000000000052 = {isa = PBXCopyFilesBuildPhase; buildActionMask = 2147483647; dstPath = "$(CONTENTS_FOLDER_PATH)/Library/SystemExtensions"; dstSubfolderSpec = 16; files = (A00000000000000000000064); name = "Embed System Extensions"; runOnlyForDeploymentPostprocessing = 0;};
+  A00000000000000000000070 = {isa = PBXTargetDependency; target = A00000000000000000000011; targetProxy = A00000000000000000000071;};
+  A00000000000000000000071 = {isa = PBXContainerItemProxy; containerPortal = A00000000000000000000001; proxyType = 1; remoteGlobalIDString = A00000000000000000000011; remoteInfo = FrameboardCameraExtension;};
+  A00000000000000000000031 = {isa = XCConfigurationList; buildConfigurations = (A00000000000000000000034,A00000000000000000000035); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release;};
+  A00000000000000000000032 = {isa = XCConfigurationList; buildConfigurations = (A00000000000000000000036,A00000000000000000000037); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release;};
+  A00000000000000000000033 = {isa = XCConfigurationList; buildConfigurations = (A00000000000000000000038,A00000000000000000000039); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release;};
+  A00000000000000000000034 = {isa = XCBuildConfiguration; buildSettings = { MACOSX_DEPLOYMENT_TARGET = 13.0; ALWAYS_SEARCH_USER_PATHS = NO; FRAMEBOARD_BUNDLE_PREFIX = com.example.frameboard; FRAMEBOARD_APP_GROUP = "group.$(FRAMEBOARD_BUNDLE_PREFIX)"; SDKROOT = macosx; SWIFT_VERSION = 5.0; }; name = Debug;};
+  A00000000000000000000035 = {isa = XCBuildConfiguration; buildSettings = { MACOSX_DEPLOYMENT_TARGET = 13.0; ALWAYS_SEARCH_USER_PATHS = NO; FRAMEBOARD_BUNDLE_PREFIX = com.example.frameboard; FRAMEBOARD_APP_GROUP = "group.$(FRAMEBOARD_BUNDLE_PREFIX)"; SDKROOT = macosx; SWIFT_VERSION = 5.0; }; name = Release;};
+  A00000000000000000000036 = {isa = XCBuildConfiguration; buildSettings = { CODE_SIGN_ENTITLEMENTS = Frameboard/App/Frameboard.entitlements; GENERATE_INFOPLIST_FILE = NO; INFOPLIST_FILE = Frameboard/App/Info.plist; PRODUCT_BUNDLE_IDENTIFIER = "$(FRAMEBOARD_BUNDLE_PREFIX)"; PRODUCT_NAME = "$(TARGET_NAME)"; SWIFT_VERSION = 5.0; ENABLE_HARDENED_RUNTIME = YES; }; name = Debug;};
+  A00000000000000000000037 = {isa = XCBuildConfiguration; buildSettings = { CODE_SIGN_ENTITLEMENTS = Frameboard/App/Frameboard.entitlements; GENERATE_INFOPLIST_FILE = NO; INFOPLIST_FILE = Frameboard/App/Info.plist; PRODUCT_BUNDLE_IDENTIFIER = "$(FRAMEBOARD_BUNDLE_PREFIX)"; PRODUCT_NAME = "$(TARGET_NAME)"; SWIFT_VERSION = 5.0; ENABLE_HARDENED_RUNTIME = YES; }; name = Release;};
+  A00000000000000000000038 = {isa = XCBuildConfiguration; buildSettings = { CODE_SIGN_ENTITLEMENTS = Frameboard/Extension/Frameboard.entitlements; GENERATE_INFOPLIST_FILE = NO; INFOPLIST_FILE = Frameboard/Extension/Info.plist; PRODUCT_BUNDLE_IDENTIFIER = "$(FRAMEBOARD_BUNDLE_PREFIX).cameraextension"; PRODUCT_NAME = "$(TARGET_NAME)"; SWIFT_VERSION = 5.0; ENABLE_HARDENED_RUNTIME = YES; MACH_O_TYPE = mh_execute; }; name = Debug;};
+  A00000000000000000000039 = {isa = XCBuildConfiguration; buildSettings = { CODE_SIGN_ENTITLEMENTS = Frameboard/Extension/Frameboard.entitlements; GENERATE_INFOPLIST_FILE = NO; INFOPLIST_FILE = Frameboard/Extension/Info.plist; PRODUCT_BUNDLE_IDENTIFIER = "$(FRAMEBOARD_BUNDLE_PREFIX).cameraextension"; PRODUCT_NAME = "$(TARGET_NAME)"; SWIFT_VERSION = 5.0; ENABLE_HARDENED_RUNTIME = YES; MACH_O_TYPE = mh_execute; }; name = Release;};
+ };
+ rootObject = A00000000000000000000001;
+}

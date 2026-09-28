@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"><plist version="1.0"><dict>
+<key>CFBundleName</key><string>Frameboard</string><key>CFBundleIdentifier</key><string>$(PRODUCT_BUNDLE_IDENTIFIER)</string><key>CFBundleExecutable</key><string>$(EXECUTABLE_NAME)</string><key>CFBundlePackageType</key><string>APPL</string>
+<key>NSCameraUsageDescription</key><string>Frameboard uses your webcam to build the virtual camera feed.</string>
+<key>NSLocalNetworkUsageDescription</key><string>Frameboard connects to your tablet over the local network.</string>
+<key>NSBonjourServices</key><array><string>_frameboard._tcp</string></array>
+<key>CFBundleShortVersionString</key><string>0.2.0</string>
+<key>CFBundleVersion</key><string>2</string>
+<key>FrameboardAppGroup</key><string>$(FRAMEBOARD_APP_GROUP)</string>
+</dict></plist>

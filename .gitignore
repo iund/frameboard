@@ -1,0 +1,6 @@
+.DS_Store
+build/
+.gradle/
+Android/local.properties
+*.xcuserstate
+xcuserdata/
